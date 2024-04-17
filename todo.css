@@ -1,0 +1,223 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(100deg, rgb(254, 95, 143), rgb(251, 158, 92));
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 2.5rem;
+    margin: 1rem;
+    color: white;
+}
+
+form {
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.take-input {
+    padding: 0.3rem;
+    display: flex;
+}
+
+.todo_input {
+    appearance: none;
+    outline: none;
+    border: 1px solid rgb(0, 0, 0);
+    font-size: 30px;
+    padding: 1rem;
+    border-radius: 20px 0px 0px 20px;
+    background-color: rgb(24, 21, 21);
+    color: white;
+}
+
+.todo_button {
+    border: 1px solid black;
+    font-size: 33px;
+
+    padding: 0.83rem;
+    border-radius: 0px 20px 20px 0px;
+    background-color: rgb(253, 58, 117);
+    transition: all 0.4s ease;
+    color: rgb(250, 250, 250);
+}
+
+.todo_button:hover {
+    background-color: rgb(255, 252, 252);
+    color: rgb(253, 58, 117);
+}
+
+/* unorderes list ka div */
+.todo_container {
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem;
+}
+
+
+
+/* div */
+.todo_items_container {
+    /* border: 3px solid green; */
+    min-width: 30%;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    border-radius: 20px 0px 0px 20px;
+    transition: all 0.5s ease;
+}
+
+/* li */
+.todo_items {
+
+    /* border: 3px solid blue; */
+    flex: 1;
+    list-style: none;
+    min-width: 15rem;
+    color: white;
+    font-size: 22px;
+    padding: 0.8rem;
+    transition: all 0.5s ease;
+
+
+
+}
+
+.checkButton,
+.trashButton {
+    /* border: 2px solid rgb(15, 13, 13); */
+    border-right: 3px solid black;
+    font-size: 25px;
+    padding: 0.7rem;
+    color: white;
+    background-color: rgb(145, 68, 68);
+}
+
+.checkButton:hover {
+    background-color: white;
+    color: rgb(145, 68, 68);
+}
+
+.trashButton:hover {
+    background-color: white;
+    color: rgb(145, 68, 68);
+}
+
+.fa-check,
+.fa-trash {
+    pointer-events: none;
+
+}
+
+.checked {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.deleted {
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
+
+/* filter by using select */
+select {
+    appearance: none;
+    outline: none;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 15px;
+    background-color: black;
+    /* media */
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 1rem 2.5rem 1rem 1rem;
+    color: white;
+    cursor: pointer;
+    width: 12.5rem;
+    /* margin: 4rem; */
+}
+
+.select {
+    margin-left: 8rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.select::after {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    content: "\25BC";
+    border-radius: 0px 15px 15px 0px;
+    border: 1px solid rgb(0, 0, 0);
+    color: white;
+    background-color: rgb(253, 58, 117);
+    font-size: 25px;
+    padding: 0.75rem;
+    font-weight: bolder;
+    pointer-events: none;
+}
+
+.select:hover::after {
+    color: rgb(253, 58, 117);
+    background-color: white;
+}
+
+@media screen and (max-width:768px) {
+    form {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0.5rem;
+    }
+
+    .select {
+        margin-left: 0rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .todo_input {
+        font-size: 16px;
+    }
+
+    .todo_button {
+        font-size: 19px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .todo_items {
+        font-size: 15px;
+        padding: 0.8rem 0.4rem;
+    }
+
+    .checkButton,
+    .trashButton {
+        font-size: 15px;
+        padding: 0.7rem 0.7rem;
+    }
+    .todo_ulist {
+        min-width:20rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        /* padding: 0; */
+    }
+}
